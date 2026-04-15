@@ -12,7 +12,7 @@ st.set_page_config(page_title="AION Battery ML", page_icon="⚡")
 @st.cache_resource
 def train_model():
     # Ensure the CSV file is in the same folder on GitHub
-    df = pd.read_csv('aion_reverse_engineered_battery_tests.csv')
+    df = pd.read_csv('aion_battery_tests.csv')
     X = df[['Resistance_mOhm', 'Est_Test_CRate', 'Est_Test_DoD', 'Est_Test_SoH']]
     y = df['Datasheet_Cycle']
     
