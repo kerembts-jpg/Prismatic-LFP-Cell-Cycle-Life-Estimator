@@ -55,8 +55,8 @@ if st.sidebar.button("Predict"):
     # ML Prediction
     raw_pred = model.predict(input_df)[0]
     
-    # Resistance Correction Rule: 0.15 -> +1%, 0.5 -> 0%, 2.0 -> -3%
-    modifier = np.interp(res, [0.15, 0.5, 2.0], [0.10, 0.0, -0.30])
+    # Resistance Correction Rule: 0.15 -> +1%, 0.5 -> 0%, 1.0 -> -1.5%
+    modifier = np.interp(res, [0.15, 0.5, 1.0], [0.10, 0.0, -0.15])
     final_pred = raw_pred * (1.0 + modifier)
     
     # Calculate Range
