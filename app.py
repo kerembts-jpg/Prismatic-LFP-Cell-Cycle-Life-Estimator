@@ -10,7 +10,7 @@ st.set_page_config(page_title="AION LFP Cell Cycle Life Estimator", page_icon="â
 
 
 try:
-    st.image("logo.png", width=400) 
+    st.image("logo.png", width=600) 
 except:
     
     pass
