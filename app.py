@@ -8,10 +8,19 @@ from sklearn.metrics import mean_absolute_error
 # Page Configuration
 st.set_page_config(page_title="AION Prismatic LFP Cell Cycle Life Estimator", page_icon="⚡")
 
+# --- LOGO EKLEME ---
+# logon.png dosyasını GitHub depona yükle. 
+# width parametresiyle logonun büyüklüğünü ayarlayabilirsin.
+try:
+    st.image("logo.png", width=200) 
+except:
+    # Eğer logo dosyası henüz yüklenmemişse hata vermemesi için boş geçiyoruz
+    pass
+
 # 1. MODEL TRAINING (Optimized with Cache)
 @st.cache_resource
 def train_model():
-    # Ensure the CSV file is in the same folder on GitHub
+    # CSV dosyasının ismini senin son paylaştığın koda göre güncelledim
     df = pd.read_csv('aion_battery_tests.csv')
     X = df[['Resistance_mOhm', 'Test_CRate', 'Test_DoD', 'Test_SoH']]
     y = df['Datasheet_Cycle']
@@ -27,7 +36,7 @@ def train_model():
 
 model, error_margin = train_model()
 
-# 2. USER INTERFACE (English & Simplified)
+# 2. USER INTERFACE
 st.title("AION Engineering: Battery ML Predictor")
 st.markdown("Predict battery cycle life based on specific test conditions and internal resistance.")
 
