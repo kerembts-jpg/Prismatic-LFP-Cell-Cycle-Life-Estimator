@@ -10,7 +10,7 @@ st.set_page_config(page_title="AION LFP Cell Cycle Life Estimator", page_icon="â
 
 
 try:
-    st.image("logo.png", width=600) 
+    st.image("logo.png", width=630) 
 except:
     
     pass
@@ -71,4 +71,4 @@ else:
     st.info("Adjust the parameters on the sidebar and click 'Predict'.")
 
 st.divider()
-st.caption("Developed by AION Engineering")
+st.caption("Developed by AION Engineering aion.energy")
