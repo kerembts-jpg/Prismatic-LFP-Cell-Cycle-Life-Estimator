@@ -14,11 +14,11 @@ try:
 except:
     pass
 
-# 1. MODEL TRAINING ON MASSIVE DATASET
+# 1. MODEL TRAINING ON DATASET
 @st.cache_resource
 def train_model():
     # GitHub'a yüklediğin o 47.000 satırlık YENİ csv dosyası
-    df = pd.read_csv('aion_massive_dataset.csv')
+    df = pd.read_csv('aion_optimum_dataset.csv')
     
     X = df[['Resistance_mOhm', 'Test_CRate', 'Test_DoD', 'Test_SoH']]
     y = df['Datasheet_Cycle']
@@ -37,7 +37,7 @@ def train_model():
     return model, mae
 
 # Modeli Yükle
-with st.spinner('Loading massive ML dataset...'):
+with st.spinner('Loading ML dataset...'):
     model, error_margin = train_model()
 
 # 2. USER INTERFACE
