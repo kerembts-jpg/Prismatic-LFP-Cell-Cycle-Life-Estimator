@@ -56,12 +56,12 @@ if st.sidebar.button("Predict"):
     raw_pred = model.predict(input_df)[0]
     
     # Resistance Correction Rule: 0.15 -> +1%, 0.5 -> 0%, 2.0 -> -3%
-    modifier = np.interp(res, [0.15, 0.5, 2.0], [0.01, 0.0, -0.03])
+    modifier = np.interp(res, [0.15, 0.5, 2.0], [0.10, 0.0, -0.30])
     final_pred = raw_pred * (1.0 + modifier)
     
     # Calculate Range
-    lower = max(0, int(final_pred - error_margin))
-    upper = int(final_pred + error_margin)
+    lower = max(0, int(final_pred - final_pred*0.04))
+    upper = int(final_pred + final_pred*0.04)
     
     # SIMPLIFIED OUTPUT
     st.divider()
