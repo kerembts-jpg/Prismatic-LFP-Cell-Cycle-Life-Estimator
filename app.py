@@ -28,20 +28,20 @@ def train_model():
 model, error_margin = train_model()
 
 # 2. USER INTERFACE (English & Simplified)
-st.title("🌲 AION Engineering: Battery ML Predictor")
+st.title("AION Engineering: Battery ML Predictor")
 st.markdown("Predict battery cycle life based on specific test conditions and internal resistance.")
 
 # Sidebar Inputs
 st.sidebar.header("Input Parameters")
-res = st.sidebar.number_input("Internal Resistance (mΩ)", value=0.50, min_value=0.15, max_value=2.00, step=0.01)
-crate = st.sidebar.number_input("Test Current (C-Rate)", value=1.0, min_value=0.1, max_value=2.5, step=0.1)
-dod = st.sidebar.slider("DoD (Depth of Discharge %)", 50, 100, 100)
-soh = st.sidebar.slider("SoH (Health Target %)", 60, 100, 80)
+res = st.sidebar.number_input("Internal Resistance (mΩ)", value=0.50, min_value=0.15, max_value=2.00, step=0.05)
+crate = st.sidebar.number_input("Test Current (C-Rate)", value=1.0, min_value=0.5, max_value=1, step=0.5)
+dod = st.sidebar.slider("DoD (Depth of Discharge %)", 80, 100, 100)
+soh = st.sidebar.slider("SoH (Health Target %)", 70, 80, 80)
 
 if st.sidebar.button("Predict"):
     # Prepare Input
     input_df = pd.DataFrame([[res, crate, dod, soh]], 
-                            columns=['Resistance_mOhm', 'Est_Test_CRate', 'Est_Test_DoD', 'Est_Test_SoH'])
+                            columns=['Resistance_mOhm', 'Test_CRate', 'Test_DoD', 'Test_SoH'])
     
     # ML Prediction
     raw_pred = model.predict(input_df)[0]
@@ -64,4 +64,4 @@ else:
     st.info("Adjust the parameters on the sidebar and click 'Predict'.")
 
 st.divider()
-st.caption("Developed by AION Engineering | Data Source: GobelPower LiFePO4 Database")
+st.caption("Developed by AION Engineering")
