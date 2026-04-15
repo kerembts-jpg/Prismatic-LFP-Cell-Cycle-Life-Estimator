@@ -35,7 +35,7 @@ def train_model():
 model, error_margin = train_model()
 
 # 2. USER INTERFACE
-st.title("AION Engineering: Battery ML Predictor")
+st.title("AION Engineering:Prismatic LFP Cell Cycle Life Estimator")
 st.markdown("Predict battery cycle life based on specific test conditions and internal resistance.")
 
 # Sidebar Inputs
