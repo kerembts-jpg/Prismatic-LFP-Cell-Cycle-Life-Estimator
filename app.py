@@ -8,13 +8,11 @@ from sklearn.metrics import mean_absolute_error
 # Page Configuration
 st.set_page_config(page_title="AION Prismatic LFP Cell Cycle Life Estimator", page_icon="⚡")
 
-# --- LOGO EKLEME ---
-# logon.png dosyasını GitHub depona yükle. 
-# width parametresiyle logonun büyüklüğünü ayarlayabilirsin.
+
 try:
-    st.image("logo.png", width=200) 
+    st.image("logo.png", width=600) 
 except:
-    # Eğer logo dosyası henüz yüklenmemişse hata vermemesi için boş geçiyoruz
+    
     pass
 
 # 1. MODEL TRAINING (Optimized with Cache)
