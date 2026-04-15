@@ -34,7 +34,7 @@ st.markdown("Predict battery cycle life based on specific test conditions and in
 # Sidebar Inputs
 st.sidebar.header("Input Parameters")
 res = st.sidebar.number_input("Internal Resistance (mΩ)", value=0.50, min_value=0.15, max_value=2.00, step=0.05)
-crate = st.sidebar.number_input("Test Current (C-Rate)", value=1.0, min_value=0.5, max_value=1, step=0.5)
+crate = st.sidebar.number_input("Test Current (C-Rate)", value=1.0, min_value=0.5, max_value=1.0, step=0.5)
 dod = st.sidebar.slider("DoD (Depth of Discharge %)", 80, 100, 100)
 soh = st.sidebar.slider("SoH (Health Target %)", 70, 80, 80)
 
