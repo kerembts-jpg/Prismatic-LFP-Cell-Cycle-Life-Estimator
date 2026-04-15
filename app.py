@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
 
 # Page Configuration
-st.set_page_config(page_title="⚡AION Prismatic LFP Cell Cycle Life Estimator⚡", page_icon="⚡")
+st.set_page_config(page_title="AION Prismatic LFP Cell Cycle Life Estimator", page_icon="⚡")
 
 # 1. MODEL TRAINING (Optimized with Cache)
 @st.cache_resource
