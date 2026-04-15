@@ -13,7 +13,7 @@ st.set_page_config(page_title="AION Battery ML", page_icon="⚡")
 def train_model():
     # Ensure the CSV file is in the same folder on GitHub
     df = pd.read_csv('aion_battery_tests.csv')
-    X = df[['Resistance_mOhm', 'Est_Test_CRate', 'Est_Test_DoD', 'Est_Test_SoH']]
+    X = df[['Resistance_mOhm', 'Test_CRate', 'Test_DoD', 'Test_SoH']]
     y = df['Datasheet_Cycle']
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
